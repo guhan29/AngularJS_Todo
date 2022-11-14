@@ -1,0 +1,16 @@
+<div>{{message}}</div>
+
+<form ng-submit="addTodo()">
+    <input type="text" ng-model='currTodo'>
+    <button type="submit">Add</button>
+</form>
+
+<ul>
+    <li 
+        ng-repeat="(key, todo) in todos" 
+        ng-style="todo.isCompleted && {'text-decoration': 'line-through'}"
+        ng-click="updateTodo(key)"
+    >
+        {{ todo.todo }}
+    </li>
+</ul>
